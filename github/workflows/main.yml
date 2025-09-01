@@ -1,0 +1,65 @@
+name: Java CI pipeline
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+  
+      - name: Install and build React frontend
+        working-directory: mail-front
+        run: |
+          npm ci
+          npm run build
+  
+      - name: Copy React build to Java webapp
+        run: |
+          find mail/src/main/webapp -mindepth 1 -maxdepth 1 ! -name 'WEB-INF' -exec rm -rf {} +
+          cp -r mail-front/dist/* mail/src/main/webapp/
+
+      - name: Set up JDK 21
+        uses: actions/setup-java@v4
+        with:
+          java-version: '21'
+          distribution: 'temurin'
+          cache: maven
+
+      - name: Build with Maven
+        run: |
+          cd mail
+          mvn clean package
+
+      - name: Upload Artifact
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: mail-war
+          path: mail/target/mail.war
+          if-no-files-found: error
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Download artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: mail-war
+          path: ${{ github.workspace }}/mail/target/
+
+      - name: Deploy to Tomcat via Manager
+        run: curl -T "${{ github.workspace }}/mail/target/mail.war" --user "${{ secrets.TOMCAT_USER }}:${{ secrets.TOMCAT_PASS }}" "https://mail.hridaykh.in/manager/text/deploy?path=/ROOT&update=true"
+
+
