@@ -60,9 +60,8 @@
 				<configuration>
 					<debugSentryCli>false</debugSentryCli>
 					<org>hriday-jg</org>
-					<project>auth-backend</project>
+					<project>mail-backend</project>
 					<authToken>${env.SENTRY_AUTH_TOKEN}</authToken>
-					<skip>${sentry.skip}</skip>
 				</configuration>
 				<executions>
 					<execution>
