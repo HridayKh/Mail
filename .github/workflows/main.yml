@@ -35,7 +35,16 @@ jobs:
           distribution: 'temurin'
           cache: maven
 
+      - name: Set up sentry-cli
+        uses: matbour/setup-sentry-cli@v1
+        with:
+          token: ${{ secrets.SENTRY_AUTH_TOKEN }}
+          organization: hriday-jg
+          project: mail-backend
+
       - name: Build with Maven
+        env:
+          SENTRY_AUTH_TOKEN: ${{ secrets.SENTRY_AUTH_TOKEN }}
         run: |
           cd mail
           mvn clean package

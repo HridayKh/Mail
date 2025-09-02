@@ -62,6 +62,7 @@
 					<org>hriday-jg</org>
 					<project>auth-backend</project>
 					<authToken>${env.SENTRY_AUTH_TOKEN}</authToken>
+					<skip>${sentry.skip}</skip>
 				</configuration>
 				<executions>
 					<execution>
