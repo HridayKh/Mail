@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="warn" shutdownHook="disable">
+	<Appenders>
+		<Console name="Console" target="SYSTEM_OUT">
+			<PatternLayout
+				pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n" />
+		</Console>
+		<Sentry name="Sentry"
+			dsn="https://e0fc56a45973b0dc07d062e529b52325@o4509022198431744.ingest.de.sentry.io/4509948080488528"
+			minimumBreadcrumbLevel="TRACE" minimumEventLevel="WARN"
+			minimumLevel="TRACE" />
+	</Appenders>
+	<Loggers>
+		<Root level="trace">
+			<AppenderRef ref="Sentry" />
+			<AppenderRef ref="Console" />
+		</Root>
+	</Loggers>
+</Configuration>
