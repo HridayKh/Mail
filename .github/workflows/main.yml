@@ -45,9 +45,11 @@ jobs:
       - name: Build with Maven
         env:
           SENTRY_AUTH_TOKEN: ${{ secrets.SENTRY_AUTH_TOKEN }}
+          SENTRY_ORG: hriday-jg
+          SENTRY_PROJECT: mail-backend
         run: |
           cd mail
-          mvn clean package
+          mvn clean package -B -q --no-transfer-progress
 
       - name: Upload Artifact
         if: success()
