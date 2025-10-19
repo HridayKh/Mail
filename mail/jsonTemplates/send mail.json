@@ -1,0 +1,27 @@
+[
+	{
+		"from": "me@example.com",
+		"to": [
+			"friend@example.com"
+		],
+		"cc": [
+			"cc@example.com"
+		],
+		"bcc": [
+			"bcc@example.com"
+		],
+		"subject": "Meeting update",
+		"body": "Hey, just updating you...",
+		"attachments": [
+			{
+				"filename": "file.pdf",
+				"url": "https://storage.example.com/uuid"
+			}
+		]
+	},
+	{
+		"id": "uuid-of-email",
+		"status": "queued",
+		"timestamp": "2025-09-02T09:12:33Z"
+	}
+]

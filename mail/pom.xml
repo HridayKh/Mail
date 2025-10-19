@@ -6,7 +6,7 @@
 	<artifactId>mail</artifactId>
 	<packaging>war</packaging>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>secrets</name>
+	<name>mail</name>
 	<dependencies>
 		<dependency>
 			<groupId>jakarta.servlet</groupId>
@@ -18,6 +18,11 @@
 			<groupId>com.mailgun</groupId>
 			<artifactId>mailgun-java</artifactId>
 			<version>2.1.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.json</groupId>
+			<artifactId>json</artifactId>
+			<version>20240303</version>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.logging.log4j</groupId>

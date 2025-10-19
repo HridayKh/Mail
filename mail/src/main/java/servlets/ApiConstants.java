@@ -10,6 +10,8 @@ public final class ApiConstants {
         // Utility class - prevent instantiation
     }
 
-    // --- Authentication URLs ---
-    public static final String TEST_URL = "/v1/test"; // GET
+    public static final String TEST_URL = "/v1/test"; // POST
+
+    // --- Send Mail URLs ---
+    public static final String SEND_MAIL_URL = "/v1/emails/send"; // POST
 }

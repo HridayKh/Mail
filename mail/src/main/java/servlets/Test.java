@@ -5,6 +5,7 @@ import org.apache.logging.log4j.Logger;
 
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import models.EmailRequest;
 import smtp.SendMail;
 
 public class Test {
@@ -13,7 +14,8 @@ public class Test {
 	public static void test(HttpServletRequest req, HttpServletResponse resp) {
 		
 		log.info("Test servlet called");
-		SendMail.send("mail@HridayKh.in", "Hriday Khanna", "hridaykh1234@gmail.com", "test subject", "<h1>HI!</h1>", null);
+		EmailRequest er = new EmailRequest();
+		SendMail.send(er);
 	}
 
 }

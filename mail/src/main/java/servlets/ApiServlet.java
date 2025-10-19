@@ -11,6 +11,7 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import servlets.sendMail.SendMailServlet;
 
 @WebServlet("/v1/*")
 public class ApiServlet extends HttpServlet {
@@ -21,6 +22,7 @@ public class ApiServlet extends HttpServlet {
 
 	static {
 		addRoute("GET", ApiConstants.TEST_URL, (req, resp, params) -> Test.test(req, resp));
+		addRoute("POST", ApiConstants.SEND_MAIL_URL, (req, resp, params) -> SendMailServlet.doPost(req, resp));
 	}
 
 	private static void addRoute(String method, String path, RouteHandler handler) {
