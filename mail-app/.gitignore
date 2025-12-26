@@ -1,62 +1,45 @@
-#Maven
-target/
-pom.xml.tag
-pom.xml.releaseBackup
-pom.xml.versionsBackup
-release.properties
-.flattened-pom.xml
+# Compiled and packaged files
+*.class
+*.jar
+*.war
+*.ear
+*.zip
+*.tar.gz
+*.rar
 
-# Eclipse
+# Log files and temporary artifacts
+*.log
+.mtj.tmp/
+hs_err_pid*
+replay_pid*
+*.ctxt
+
+# IDE and OS files
+.DS_Store
 .project
 .classpath
 .settings/
-bin/
-
-# IntelliJ
-.idea
-*.ipr
+.idea/
 *.iml
-*.iws
+.vscode/
 
-# NetBeans
-nb-configuration.xml
+# Build artifacts and directories
+/node_modules/
+/build/
+/dist/
+/target/
+/out/
+/local_testing/
+.react-router/
 
-# Visual Studio Code
-.vscode
-.factorypath
+# Maven-specific files
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+.mvn/timing.properties
+.mvn/wrapper/maven-wrapper.jar
 
-# OSX
-.DS_Store
-
-# Vim
-*.swp
-*.swo
-
-# patch
-*.orig
-*.rej
-
-# Local environment
-.env
-
-# Plugin directory
-/.quarkus/cli/plugins/
-# TLS Certificates
-.certs/
-
-# Quinoa
-node_modules/
-build/
-dist/
-.quinoa/
-dist-ssr
-*.local
-
-# Logs
-logs/
-*.log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-pnpm-debug.log*
-lerna-debug.log*
