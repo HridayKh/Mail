@@ -29,7 +29,6 @@ replay_pid*
 /dist/
 /target/
 /out/
-/local_testing/
 .react-router/
 
 # Maven-specific files
@@ -40,6 +39,7 @@ pom.xml.next
 release.properties
 dependency-reduced-pom.xml
 buildNumber.properties
-.mvn/timing.properties
-.mvn/wrapper/maven-wrapper.jar
 
+/.mvn/
+/local_testing/
+/.quinoa/

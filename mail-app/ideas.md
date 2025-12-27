@@ -1,0 +1,3 @@
+- mailgun sync if there is downtime for recieved emails
+- email status tracking (read/unread)
+- Schedule Send
