@@ -1,0 +1,195 @@
+message-headers: [["Received","by luna.mailgun.net with SMTP mgrt 8788212249833; Fri, 26 Apr 2013 18:50:30 +0000"],["Received","from [10.20.76.69] (Unknown [50.56.129.169]) by mxa.mailgun.org with ESMTP id 517acc75.4b341f0-worker2; Fri, 26 Apr 2013 18:50:29 -0000 (UTC)"],["Message-Id","<517ACC75.5010709@mail.hriday.tech>"],["Date","Fri, 26 Apr 2013 11:50:29 -0700"],["From","Bob <bob@mail.hriday.tech>"],["User-Agent","Mozilla/5.0 (X11; Linux x86_64; rv:17.0) Gecko/20130308 Thunderbird/17.0.4"],["Mime-Version","1.0"],["To","Alice <alice@mail.hriday.tech>"],["Subject","Re: Sample POST request"],["References","<517AC78B.5060404@mail.hriday.tech>"],["In-Reply-To","<517AC78B.5060404@mail.hriday.tech>"],["X-Mailgun-Variables","{\"my_var_1\": \"Mailgun Variable #1\", \"my-var-2\": \"awesome\"}"],["X-Test-Upsert","C'est très bien!"],["X-Test-Many","v1"],["X-Test-Many","v2"],["X-Test-Many","v3"],["X-Test-Utf8","Доброго здоровьица!"],["Content-Type","multipart/mixed; boundary=\"------------020601070403020003080006\""],["Sender","bob@mail.hriday.tech"]]
+Subject: Re: Sample POST request
+recipient: rachel@mail.hriday.tech,emily@mail.hriday.tech
+from: Bob <bob@mail.hriday.tech>
+Message-Id: <517ACC75.5010709@mail.hriday.tech>
+Date: Fri, 26 Apr 2013 11:50:29 -0700
+To: Alice <alice@mail.hriday.tech>
+X-Mailgun-Variables: {"my_var_1": "Mailgun Variable #1", "my-var-2": "awesome"}
+Content-Type: multipart/mixed; boundary="------------020601070403020003080006"
+sender: ross@mail.hriday.tech
+Received: from [10.20.76.69] (Unknown [50.56.129.169]) by mxa.mailgun.org with ESMTP id 517acc75.4b341f0-worker2; Fri, 26 Apr 2013 18:50:29 -0000 (UTC)
+In-Reply-To: <517AC78B.5060404@mail.hriday.tech>
+X-Test-Upsert: C'est très bien!
+Sender: bob@mail.hriday.tech
+body-plain: Hi Alice,
+
+This is Bob.
+
+I also attached a file.
+
+Thanks,
+Bob
+
+On 04/26/2013 11:29 AM, Alice wrote:
+> Hi Bob,
+>
+> This is Alice. How are you doing?
+>
+> Thanks,
+> Alice
+
+
+body-html: <html>
+  <head>
+    <meta content="text/html; charset=ISO-8859-1"
+      http-equiv="Content-Type">
+  </head>
+  <body text="#000000" bgcolor="#FFFFFF">
+    <div class="moz-cite-prefix">
+      <div style="color: rgb(34, 34, 34); font-family: arial,
+        sans-serif; font-size: 12.666666984558105px; font-style: normal;
+        font-variant: normal; font-weight: normal; letter-spacing:
+        normal; line-height: normal; orphans: auto; text-align: start;
+        text-indent: 0px; text-transform: none; white-space: normal;
+        widows: auto; word-spacing: 0px; -webkit-text-size-adjust: auto;
+        -webkit-text-stroke-width: 0px; background-color: rgb(255, 255,
+        255);">Hi Alice,</div>
+      <div style="color: rgb(34, 34, 34); font-family: arial,
+        sans-serif; font-size: 12.666666984558105px; font-style: normal;
+        font-variant: normal; font-weight: normal; letter-spacing:
+        normal; line-height: normal; orphans: auto; text-align: start;
+        text-indent: 0px; text-transform: none; white-space: normal;
+        widows: auto; word-spacing: 0px; -webkit-text-size-adjust: auto;
+        -webkit-text-stroke-width: 0px; background-color: rgb(255, 255,
+        255);"><br>
+      </div>
+      <div style="color: rgb(34, 34, 34); font-family: arial,
+        sans-serif; font-size: 12.666666984558105px; font-style: normal;
+        font-variant: normal; font-weight: normal; letter-spacing:
+        normal; line-height: normal; orphans: auto; text-align: start;
+        text-indent: 0px; text-transform: none; white-space: normal;
+        widows: auto; word-spacing: 0px; -webkit-text-size-adjust: auto;
+        -webkit-text-stroke-width: 0px; background-color: rgb(255, 255,
+        255);">This is Bob.<span class="Apple-converted-space">&nbsp;<img
+            alt="" src="cid:part1.04060802.06030207@mail.hriday.tech"
+            height="15" width="33"></span></div>
+      <div style="color: rgb(34, 34, 34); font-family: arial,
+        sans-serif; font-size: 12.666666984558105px; font-style: normal;
+        font-variant: normal; font-weight: normal; letter-spacing:
+        normal; line-height: normal; orphans: auto; text-align: start;
+        text-indent: 0px; text-transform: none; white-space: normal;
+        widows: auto; word-spacing: 0px; -webkit-text-size-adjust: auto;
+        -webkit-text-stroke-width: 0px; background-color: rgb(255, 255,
+        255);"><br>
+        I also attached a file.<br>
+        <br>
+      </div>
+      <div style="color: rgb(34, 34, 34); font-family: arial,
+        sans-serif; font-size: 12.666666984558105px; font-style: normal;
+        font-variant: normal; font-weight: normal; letter-spacing:
+        normal; line-height: normal; orphans: auto; text-align: start;
+        text-indent: 0px; text-transform: none; white-space: normal;
+        widows: auto; word-spacing: 0px; -webkit-text-size-adjust: auto;
+        -webkit-text-stroke-width: 0px; background-color: rgb(255, 255,
+        255);">Thanks,</div>
+      <div style="color: rgb(34, 34, 34); font-family: arial,
+        sans-serif; font-size: 12.666666984558105px; font-style: normal;
+        font-variant: normal; font-weight: normal; letter-spacing:
+        normal; line-height: normal; orphans: auto; text-align: start;
+        text-indent: 0px; text-transform: none; white-space: normal;
+        widows: auto; word-spacing: 0px; -webkit-text-size-adjust: auto;
+        -webkit-text-stroke-width: 0px; background-color: rgb(255, 255,
+        255);">Bob</div>
+      <br>
+      On 04/26/2013 11:29 AM, Alice wrote:<br>
+    </div>
+    <blockquote cite="mid:517AC78B.5060404@mail.hriday.tech" type="cite">Hi
+      Bob,
+      <br>
+      <br>
+      This is Alice. How are you doing?
+      <br>
+      <br>
+      Thanks,
+      <br>
+      Alice
+      <br>
+    </blockquote>
+    <br>
+  </body>
+</html>
+
+subject: Re: Sample POST request
+From: Bob <bob@mail.hriday.tech>
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:17.0) Gecko/20130308 Thunderbird/17.0.4
+X-Test-Utf8: Доброго здоровьица!
+Mime-Version: 1.0
+References: <517AC78B.5060404@mail.hriday.tech>
+X-Test-Many: v3
+attachment-count: 2
+content-id-map: {"<part1.04060802.06030207@mail.hriday.tech>":"attachment-1"}
+stripped-text: Hi Alice,
+
+This is Bob.
+
+I also attached a file.
+stripped-html: <html><head>
+    <meta content="text/html; charset=ISO-8859-1" http-equiv="Content-Type">
+  </head>
+  <body text="#000000" bgcolor="#FFFFFF">
+    <div class="moz-cite-prefix">
+      <div style="color: rgb(34, 34, 34); font-family: arial,
+        sans-serif; font-size: 12.666666984558105px; font-style: normal;
+        font-variant: normal; font-weight: normal; letter-spacing:
+        normal; line-height: normal; orphans: auto; text-align: start;
+        text-indent: 0px; text-transform: none; white-space: normal;
+        widows: auto; word-spacing: 0px; -webkit-text-size-adjust: auto;
+        -webkit-text-stroke-width: 0px; background-color: rgb(255, 255,
+        255);">Hi Alice,</div>
+      <div style="color: rgb(34, 34, 34); font-family: arial,
+        sans-serif; font-size: 12.666666984558105px; font-style: normal;
+        font-variant: normal; font-weight: normal; letter-spacing:
+        normal; line-height: normal; orphans: auto; text-align: start;
+        text-indent: 0px; text-transform: none; white-space: normal;
+        widows: auto; word-spacing: 0px; -webkit-text-size-adjust: auto;
+        -webkit-text-stroke-width: 0px; background-color: rgb(255, 255,
+        255);"><br>
+      </div>
+      <div style="color: rgb(34, 34, 34); font-family: arial,
+        sans-serif; font-size: 12.666666984558105px; font-style: normal;
+        font-variant: normal; font-weight: normal; letter-spacing:
+        normal; line-height: normal; orphans: auto; text-align: start;
+        text-indent: 0px; text-transform: none; white-space: normal;
+        widows: auto; word-spacing: 0px; -webkit-text-size-adjust: auto;
+        -webkit-text-stroke-width: 0px; background-color: rgb(255, 255,
+        255);">This is Bob.<span class="Apple-converted-space">&#160;<img alt="" src="cid:part1.04060802.06030207@mail.hriday.tech" height="15" width="33"></span></div>
+      <div style="color: rgb(34, 34, 34); font-family: arial,
+        sans-serif; font-size: 12.666666984558105px; font-style: normal;
+        font-variant: normal; font-weight: normal; letter-spacing:
+        normal; line-height: normal; orphans: auto; text-align: start;
+        text-indent: 0px; text-transform: none; white-space: normal;
+        widows: auto; word-spacing: 0px; -webkit-text-size-adjust: auto;
+        -webkit-text-stroke-width: 0px; background-color: rgb(255, 255,
+        255);"><br>
+        I also attached a file.<br>
+        <br>
+      </div>
+      <div style="color: rgb(34, 34, 34); font-family: arial,
+        sans-serif; font-size: 12.666666984558105px; font-style: normal;
+        font-variant: normal; font-weight: normal; letter-spacing:
+        normal; line-height: normal; orphans: auto; text-align: start;
+        text-indent: 0px; text-transform: none; white-space: normal;
+        widows: auto; word-spacing: 0px; -webkit-text-size-adjust: auto;
+        -webkit-text-stroke-width: 0px; background-color: rgb(255, 255,
+        255);">Thanks,</div>
+      <div style="color: rgb(34, 34, 34); font-family: arial,
+        sans-serif; font-size: 12.666666984558105px; font-style: normal;
+        font-variant: normal; font-weight: normal; letter-spacing:
+        normal; line-height: normal; orphans: auto; text-align: start;
+        text-indent: 0px; text-transform: none; white-space: normal;
+        widows: auto; word-spacing: 0px; -webkit-text-size-adjust: auto;
+        -webkit-text-stroke-width: 0px; background-color: rgb(255, 255,
+        255);">Bob</div>
+      <br>
+      On 04/26/2013 11:29 AM, Alice wrote:<br>
+    </div>
+    <br>
+  
+
+</body></html>
+stripped-signature: Thanks,
+Bob
+token: 1686b4f2b45d46f25799106088d77a35049922713a62f5b634
+timestamp: 1766939316
+signature: 00dec42f1bb689e6be676e12531af5e5f89b0bbf651e993a79fd6264fd1907d7

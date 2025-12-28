@@ -10,6 +10,7 @@ export default defineConfig({
         hmr: {
             // This ensures Vite knows it's being proxied through Quarkus
             clientPort: 8080
-        }
+        },
+        allowedHosts: [".ngrok-free.app"]
     }
 })
