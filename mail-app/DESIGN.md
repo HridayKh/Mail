@@ -2,7 +2,7 @@
 
 ## Architecture Overview
 
-This backend is built using **Quarkus 3.30.5** with **Java 21**, designed for a **single-user personal email system** with support for multiple sender identities and domains.	
+This backend is built using **Quarkus 3.30.5** with **Java 21**, designed for a **single-user personal email system** with support for multiple sender identities and domains.
 
 - **Core Framework**: Quarkus (REST, Hibernate ORM, Panache)
 - **Database**: MySQL
