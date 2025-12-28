@@ -69,7 +69,7 @@ public class Email extends PanacheEntity {
 
 	// Recipients
 	@Column(columnDefinition = "TEXT")
-	private String to; // Comma-separated addresses: "a@b.com, c@d.com"
+	private String toEmail; // Comma-separated addresses: "a@b.com, c@d.com"
 
 	@Column(columnDefinition = "JSON")
 	private String ccJson;

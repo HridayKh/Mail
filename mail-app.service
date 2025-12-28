@@ -1,0 +1,14 @@
+[Unit]
+Description=Quarkus Mail Application
+After=network.target
+
+[Service]
+User=opc
+WorkingDirectory=/opt/mail-app/quarkus-app
+ExecStart=/usr/bin/java -Xmx512m -jar quarkus-run.jar
+SuccessExitStatus=143
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

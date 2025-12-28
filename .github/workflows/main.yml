@@ -1,0 +1,40 @@
+name: Optimized Quarkus Deploy
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up JDK 21
+        uses: actions/setup-java@v4
+        with:
+          java-version: '21'
+          distribution: 'temurin'
+          cache: maven
+
+      - name: Build with Maven
+        working-directory: mail
+        run: mvn clean package -DskipTests
+
+      - name: Deploy to Server
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: api.hridaykh.in
+          username: opc
+          key: ${{ secrets.SERVER_SSH_KEY }}
+          source: "mail/target/quarkus-app/"
+          target: "/opt/mail-app"
+          strip_components: 2
+
+      - name: Restart Service
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: api.hridaykh.in
+          username: opc
+          key: ${{ secrets.SERVER_SSH_KEY }}
+          script: sudo systemctl restart mail-app
