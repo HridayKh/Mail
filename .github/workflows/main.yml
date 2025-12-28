@@ -18,11 +18,7 @@ jobs:
           cache: maven
 
       - name: Build with Maven
-<<<<<<< HEAD
         working-directory: mail-app
-=======
-        working-directory: mail
->>>>>>> 8da41eba1a20538a3282307eb5af706c6e185360
         run: mvn clean package -DskipTests
 
       - name: Deploy to Server
@@ -31,11 +27,7 @@ jobs:
           host: api.hridaykh.in
           username: opc
           key: ${{ secrets.SERVER_SSH_KEY }}
-<<<<<<< HEAD
           source: "mail-app/target/quarkus-app/"
-=======
-          source: "mail/target/quarkus-app/"
->>>>>>> 8da41eba1a20538a3282307eb5af706c6e185360
           target: "/opt/mail-app"
           strip_components: 2
 
