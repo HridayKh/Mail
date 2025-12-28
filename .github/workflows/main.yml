@@ -19,13 +19,13 @@ jobs:
 
       - name: Build with Maven
         working-directory: mail-app
-        run: mvn clean package -DskipTests
+        run: ./mvnw clean package -DskipTests
 
       - name: Deploy to Server
         uses: appleboy/scp-action@v0.1.7
         with:
-          host: api.hridaykh.in
-          username: opc
+          host: ${{ secrets.SERVER_IP }} 
+          username: ${{ secrets.SERVER_USER }}
           key: ${{ secrets.SERVER_SSH_KEY }}
           source: "mail-app/target/quarkus-app/"
           target: "/opt/mail-app"
@@ -34,7 +34,7 @@ jobs:
       - name: Restart Service
         uses: appleboy/ssh-action@v1.0.3
         with:
-          host: api.hridaykh.in
-          username: opc
+          host: ${{ secrets.SERVER_IP }}
+          username: ${{ secrets.SERVER_USER }}
           key: ${{ secrets.SERVER_SSH_KEY }}
           script: sudo systemctl restart mail-app
