@@ -1,0 +1,69 @@
+Content-Type: multipart/form-data; boundary=965d86987cb479392b7278d35149e785d68e61b31285c9f97b5fde047d78
+
+X-Gm-Features: AQt7F2qT7ZIN1zmUjgqipt976Ix99bhuzUPSwHtg1Rq_gClP69awluku8ui1ejQ
+Message-Id: <CAA9rN9BFz0=+OOkByiX6S7oabOOFpoBm_Z8+gLvyX3v3+3sRRw@mail.gmail.com>
+body-plain: a
+
+On Sun, Dec 28, 2025 at 10:24 PM PROMAN8625 <hridaykh1234@gmail.com> wrote:
+
+>
+>
+> ---------- Forwarded message ---------
+> From: PROMAN8625 <hridaykh1234@gmail.com>
+> Date: Sun, Dec 28, 2025 at 10:20 PM
+> Subject: Fwd: this is a subject
+> To: <a@hridaykh.in>
+>
+>
+>
+>
+> ---------- Forwarded message ---------
+> From: PROMAN8625 <hridaykh1234@gmail.com>
+> Date: Sun, Dec 28, 2025 at 10:15 PM
+> Subject: this is a subject
+> To: <a@mail.hridaykh.in>
+>
+>
+> a *baddass body **here* haha
+> thanks,
+> hriday
+>
+
+body-html: <div dir="ltr">a</div><br><div class="gmail_quote gmail_quote_container"><div dir="ltr" class="gmail_attr">On Sun, Dec 28, 2025 at 10:24 PM PROMAN8625 &lt;<a href="mailto:hridaykh1234@gmail.com">hridaykh1234@gmail.com</a>&gt; wrote:<br></div><blockquote class="gmail_quote" style="margin:0px 0px 0px 0.8ex;border-left:1px solid rgb(204,204,204);padding-left:1ex"><div dir="ltr"><br><br><div class="gmail_quote"><div dir="ltr" class="gmail_attr">---------- Forwarded message ---------<br>From: <b class="gmail_sendername" dir="auto">PROMAN8625</b> <span dir="auto">&lt;<a href="mailto:hridaykh1234@gmail.com" target="_blank">hridaykh1234@gmail.com</a>&gt;</span><br>Date: Sun, Dec 28, 2025 at 10:20 PM<br>Subject: Fwd: this is a subject<br>To:  &lt;<a href="mailto:a@hridaykh.in" target="_blank">a@hridaykh.in</a>&gt;<br></div><br><br><div dir="ltr"><br><br><div class="gmail_quote"><div dir="ltr" class="gmail_attr">---------- Forwarded message ---------<br>From: <b class="gmail_sendername" dir="auto">PROMAN8625</b> <span dir="auto">&lt;<a href="mailto:hridaykh1234@gmail.com" target="_blank">hridaykh1234@gmail.com</a>&gt;</span><br>Date: Sun, Dec 28, 2025 at 10:15 PM<br>Subject: this is a subject<br>To:  &lt;<a href="mailto:a@mail.hridaykh.in" target="_blank">a@mail.hridaykh.in</a>&gt;<br></div><br><br><div dir="ltr"><div>a <b>baddass body </b><u>here</u> haha</div><div>thanks,</div><div>hriday</div></div>
+</div></div>
+</div></div>
+</blockquote></div>
+
+Mime-Version: 1.0
+subject: Re: this is a subject
+X-Mailgun-Incoming: Yes
+X-Google-Dkim-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=1e100.net; s=20230601; t=1766941094; x=1767545894; h=to:subject:message-id:date:from:in-reply-to:references:mime-version :x-gm-gg:x-gm-message-state:from:to:cc:subject:date:message-id :reply-to; bh=IZxxnb0IOoiywR/CBgC4MNvIMcXcaYqIm25r48Shjyg=; b=E8g4OvCc4d9QZ5haFZbPLyc5Ao3B1uFGVmEe9QzwK2fESMwPzqDch40rslN2ewBt+D vMaZYwkfcgcDoFW6SaZOTZdHlIT6ZP6F0ZiEA3+4SwSNflkY9uw83NhOM3T/ypr8AeL1 jMoe6G5E1vl8mfPxkQ4fmzo7C/DPlQln36q+DuumpUAiSOc1tVG+PHCRKkdPWZxMgE0Y 85j4gNaxpwh7mn1MhvGnIIuB0F/yquV4TMkjqfSCOfGwOVJMFpPJZyW8lIvoifm6xESH F7P1z5mWc3jNvUHH5sPSaDz4CEaTWwg4yrMQiGcwuT/N4eprsiXC+N2kpCJTdxKVKJio 2oMA==
+X-Google-Smtp-Source: AGHT+IF+V0belsOjPMD3jzFdzqeONLJLQISq3LW3V5eWTxHKhAMSipBF908HVLpycGVWjBLvWht8xmXuQwjQqi9kJbw=
+References: <CAA9rN9Cg3087UKS-ah-4jqoJETV=yeg8ThYQ_9hvyn1XTTaPLg@mail.gmail.com> <CAA9rN9CbqQWaLMHP9mjzq8xCQSYTOVnS5Gom8cD717SakKSf+A@mail.gmail.com> <CAA9rN9DaV4z_bceV=gQJ6uKGZ6V4dcpOQh31iRJH=Rx=g4jZdA@mail.gmail.com>
+Date: Sun, 28 Dec 2025 22:27:38 +0530
+Subject: Re: this is a subject
+recipient: bb@hridaykh.in
+X-Received: by 2002:a4a:e3d3:0:b0:659:9a49:8f6f with SMTP id 006d021491bc7-65d0ea9b17emr8799816eaf.52.1766941094433; Sun, 28 Dec 2025 08:58:14 -0800 (PST)
+To: bb@hridaykh.in
+Content-Type: multipart/mixed; boundary="0000000000004635e606470608a5"
+message-headers: [["X-Mailgun-Incoming","Yes"],["X-Envelope-From","hridaykh1234@gmail.com"],["Received","from mail-oo1-f44.google.com (mail-oo1-f44.google.com [209.85.161.44]) by d75db42badf4a970078c2bba0c9a61c3a71be7c16340557d28a7c84777386d94 with SMTP id <undefined> (version=TLS1.3, cipher=TLS_AES_128_GCM_SHA256); Sun, 28 Dec 2025 16:58:15 GMT"],["Received","by mail-oo1-f44.google.com with SMTP id 006d021491bc7-65d0953cd49so5504129eaf.0 for <bb@hridaykh.in>; Sun, 28 Dec 2025 08:58:15 -0800 (PST)"],["Dkim-Signature","v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20230601; t=1766941094; x=1767545894; darn=hridaykh.in; h=to:subject:message-id:date:from:in-reply-to:references:mime-version :from:to:cc:subject:date:message-id:reply-to; bh=IZxxnb0IOoiywR/CBgC4MNvIMcXcaYqIm25r48Shjyg=; b=Tfcn9vPsgAKeeGIjMzp0lPq/HIMnBlBdhQEiL4XNahY+NdTL+slCd6SZx++2WQy/IN cz6mH0TP5HKMxsfKpXdT7wTxsl3jefmlsuFiKuLnKv+TBB9gWv8SJb34ulJrCbydcaGu X7+QbbVIFre2uJgpKOxsGrULJ11Fz21YGKEx4gNLZceSZH0LI+ww/zcgK40+s0memXIu oiiFPG7ASVZcTxj7+0stbc+yymqhPZuiHvm6JKcNABuXped+wfH6qdcTUAy3yFuEzbig UYcv/fCdcMSCJ3TvOey5B615z5DFPKfPpHwCC+pX4Dslh3XGJLQ/9CCe7BD09JcF+8nq jC7Q=="],["X-Google-Dkim-Signature","v=1; a=rsa-sha256; c=relaxed/relaxed; d=1e100.net; s=20230601; t=1766941094; x=1767545894; h=to:subject:message-id:date:from:in-reply-to:references:mime-version :x-gm-gg:x-gm-message-state:from:to:cc:subject:date:message-id :reply-to; bh=IZxxnb0IOoiywR/CBgC4MNvIMcXcaYqIm25r48Shjyg=; b=E8g4OvCc4d9QZ5haFZbPLyc5Ao3B1uFGVmEe9QzwK2fESMwPzqDch40rslN2ewBt+D vMaZYwkfcgcDoFW6SaZOTZdHlIT6ZP6F0ZiEA3+4SwSNflkY9uw83NhOM3T/ypr8AeL1 jMoe6G5E1vl8mfPxkQ4fmzo7C/DPlQln36q+DuumpUAiSOc1tVG+PHCRKkdPWZxMgE0Y 85j4gNaxpwh7mn1MhvGnIIuB0F/yquV4TMkjqfSCOfGwOVJMFpPJZyW8lIvoifm6xESH F7P1z5mWc3jNvUHH5sPSaDz4CEaTWwg4yrMQiGcwuT/N4eprsiXC+N2kpCJTdxKVKJio 2oMA=="],["X-Gm-Message-State","AOJu0YxB8mMfcH5ICakdWi8S9pVViMdEZmUlpdFurH90nvTPejihGaGf zv+r9h/vvGR5Yf8IQYXwfaopP0mAFa1AGM+DODqXWUM/RPTwNTMq1vrWyCFTQ2reWFL+b48m3u7 SELzNQ2ZqfwX9FRRF193tnwRaHzou/22V/7MN"],["X-Gm-Gg","AY/fxX7KqIZj0JrldEbGIISTRyxKblDwtEuW5w+ydi6jCzq2AfjomdEq98EUQGIvYzj bpC0mvz9TuCR+lwVGBkHEI47p49e26MCzB+g/1LRUivHJPY5ESBhWwtdrAsi7uRq09kbXu4Qqdp TzQL9NxIV5QMdEH4d9rnRbLoRrPshP3Xjpv8nmyMHL9hsca9Gx1wp7nfcbQcRs3q/LGgWHRXmwj YNKlljnZFStWJkqaLK19gZ4I44Y0+dshIH6f4dxojfOMzK/324fSk8saMAUooFE6YRWGXg="],["X-Google-Smtp-Source","AGHT+IF+V0belsOjPMD3jzFdzqeONLJLQISq3LW3V5eWTxHKhAMSipBF908HVLpycGVWjBLvWht8xmXuQwjQqi9kJbw="],["X-Received","by 2002:a4a:e3d3:0:b0:659:9a49:8f6f with SMTP id 006d021491bc7-65d0ea9b17emr8799816eaf.52.1766941094433; Sun, 28 Dec 2025 08:58:14 -0800 (PST)"],["Mime-Version","1.0"],["References","<CAA9rN9Cg3087UKS-ah-4jqoJETV=yeg8ThYQ_9hvyn1XTTaPLg@mail.gmail.com> <CAA9rN9CbqQWaLMHP9mjzq8xCQSYTOVnS5Gom8cD717SakKSf+A@mail.gmail.com> <CAA9rN9DaV4z_bceV=gQJ6uKGZ6V4dcpOQh31iRJH=Rx=g4jZdA@mail.gmail.com>"],["In-Reply-To","<CAA9rN9DaV4z_bceV=gQJ6uKGZ6V4dcpOQh31iRJH=Rx=g4jZdA@mail.gmail.com>"],["From","PROMAN8625 <hridaykh1234@gmail.com>"],["Date","Sun, 28 Dec 2025 22:27:38 +0530"],["X-Gm-Features","AQt7F2qT7ZIN1zmUjgqipt976Ix99bhuzUPSwHtg1Rq_gClP69awluku8ui1ejQ"],["Message-Id","<CAA9rN9BFz0=+OOkByiX6S7oabOOFpoBm_Z8+gLvyX3v3+3sRRw@mail.gmail.com>"],["Subject","Re: this is a subject"],["To","bb@hridaykh.in"],["Content-Type","multipart/mixed; boundary=\"0000000000004635e606470608a5\""]]
+from: PROMAN8625 <hridaykh1234@gmail.com>
+X-Envelope-From: hridaykh1234@gmail.com
+Dkim-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20230601; t=1766941094; x=1767545894; darn=hridaykh.in; h=to:subject:message-id:date:from:in-reply-to:references:mime-version :from:to:cc:subject:date:message-id:reply-to; bh=IZxxnb0IOoiywR/CBgC4MNvIMcXcaYqIm25r48Shjyg=; b=Tfcn9vPsgAKeeGIjMzp0lPq/HIMnBlBdhQEiL4XNahY+NdTL+slCd6SZx++2WQy/IN cz6mH0TP5HKMxsfKpXdT7wTxsl3jefmlsuFiKuLnKv+TBB9gWv8SJb34ulJrCbydcaGu X7+QbbVIFre2uJgpKOxsGrULJ11Fz21YGKEx4gNLZceSZH0LI+ww/zcgK40+s0memXIu oiiFPG7ASVZcTxj7+0stbc+yymqhPZuiHvm6JKcNABuXped+wfH6qdcTUAy3yFuEzbig UYcv/fCdcMSCJ3TvOey5B615z5DFPKfPpHwCC+pX4Dslh3XGJLQ/9CCe7BD09JcF+8nq jC7Q==
+X-Gm-Message-State: AOJu0YxB8mMfcH5ICakdWi8S9pVViMdEZmUlpdFurH90nvTPejihGaGf zv+r9h/vvGR5Yf8IQYXwfaopP0mAFa1AGM+DODqXWUM/RPTwNTMq1vrWyCFTQ2reWFL+b48m3u7 SELzNQ2ZqfwX9FRRF193tnwRaHzou/22V/7MN
+In-Reply-To: <CAA9rN9DaV4z_bceV=gQJ6uKGZ6V4dcpOQh31iRJH=Rx=g4jZdA@mail.gmail.com>
+From: PROMAN8625 <hridaykh1234@gmail.com>
+sender: hridaykh1234@gmail.com
+Received: by mail-oo1-f44.google.com with SMTP id 006d021491bc7-65d0953cd49so5504129eaf.0 for <bb@hridaykh.in>; Sun, 28 Dec 2025 08:58:15 -0800 (PST)
+X-Gm-Gg: AY/fxX7KqIZj0JrldEbGIISTRyxKblDwtEuW5w+ydi6jCzq2AfjomdEq98EUQGIvYzj bpC0mvz9TuCR+lwVGBkHEI47p49e26MCzB+g/1LRUivHJPY5ESBhWwtdrAsi7uRq09kbXu4Qqdp TzQL9NxIV5QMdEH4d9rnRbLoRrPshP3Xjpv8nmyMHL9hsca9Gx1wp7nfcbQcRs3q/LGgWHRXmwj YNKlljnZFStWJkqaLK19gZ4I44Y0+dshIH6f4dxojfOMzK/324fSk8saMAUooFE6YRWGXg=
+attachment-count: 1
+content-id-map: {"<f_mjpz2zyu0>":"attachment-1"}
+stripped-text: a
+stripped-html: <div dir="ltr">a</div><br><div class="gmail_quote gmail_quote_container"><div dir="ltr" class="gmail_attr">On Sun, Dec 28, 2025 at 10:24 PM PROMAN8625 &lt;<a href="mailto:hridaykh1234@gmail.com">hridaykh1234@gmail.com</a>&gt; wrote:<br></div><blockquote class="gmail_quote" style="margin:0px 0px 0px 0.8ex;border-left:1px solid rgb(204,204,204);padding-left:1ex"><div dir="ltr"><br><br><div class="gmail_quote"><div dir="ltr" class="gmail_attr">---------- Forwarded message ---------<br>From: <b class="gmail_sendername" dir="auto">PROMAN8625</b> <span dir="auto">&lt;<a href="mailto:hridaykh1234@gmail.com" target="_blank">hridaykh1234@gmail.com</a>&gt;</span><br>Date: Sun, Dec 28, 2025 at 10:20 PM<br>Subject: Fwd: this is a subject<br>To:  &lt;<a href="mailto:a@hridaykh.in" target="_blank">a@hridaykh.in</a>&gt;<br></div><br><br><div dir="ltr"><br><br><div class="gmail_quote"><div dir="ltr" class="gmail_attr">---------- Forwarded message ---------<br>From: <b class="gmail_sendername" dir="auto">PROMAN8625</b> <span dir="auto">&lt;<a href="mailto:hridaykh1234@gmail.com" target="_blank">hridaykh1234@gmail.com</a>&gt;</span><br>Date: Sun, Dec 28, 2025 at 10:15 PM<br>Subject: this is a subject<br>To:  &lt;<a href="mailto:a@mail.hridaykh.in" target="_blank">a@mail.hridaykh.in</a>&gt;<br></div><br><br><div dir="ltr"><div>a <b>baddass body </b><u>here</u> haha</div><div>thanks,</div><div>hriday</div></div>
+</div></div>
+</div></div>
+</blockquote></div>
+
+token: a75093c67415357bf68f1bb47b4b6a7bb8db52b63e4ebfd6d2
+timestamp: 1766941096
+signature: 3a4ac734d79ef83a5a762b4157503acda11939ee611396b0879f4f601f8f13e7

@@ -2,9 +2,6 @@ package in.HridayKh.entities;
 
 import io.quarkus.hibernate.orm.panache.PanacheEntity;
 import jakarta.persistence.*;
-import org.hibernate.annotations.CreationTimestamp;
-
-import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "attachments")
@@ -12,20 +9,23 @@ public class Attachment extends PanacheEntity {
 
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "email_id", nullable = false)
-	private Email email;
+	public Email email;
 
 	@Column(nullable = false)
-	private String fileName;
+	public String fileName;
 
 	@Column(nullable = false)
-	private String mimeType;
+	public String fileUrl;
 
 	@Column(nullable = false)
-	private Long fileSizeBytes;
+	public String mimeType;
 
 	@Column(nullable = false)
-	private String fileUrl;
+	public Long fileSizeBytes;
 
-	@CreationTimestamp
-	private LocalDateTime createdAt;
+	public String toFancyString() {
+		return id + ": " + fileName + " (" + mimeType + ") " + fileSizeBytes +
+				"B email(" + (email != null ? email.id : "null") + ") " + fileUrl;
+	}
+
 }
