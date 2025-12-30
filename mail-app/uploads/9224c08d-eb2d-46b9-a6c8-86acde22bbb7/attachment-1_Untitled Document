@@ -1,0 +1,10 @@
+excalidraw https://excalidraw.com/#json=81PV_B8gfgj0bKURH9rXu,KVCOnvA8bOiBlwadKA1Rig
+
+cd "/mnt/data/home/Downloads/Among Us_2025.12.11_APKPure.xapk_FILES"
+
+sudo waydroid shell pm install-create && \
+sudo waydroid shell pm install-write 0 base com.innersloth.spacemafia.apk && \
+sudo waydroid shell pm install-write 0 config.armeabi_v7a config.armeabi_v7a.apk && \
+sudo waydroid shell pm install-write 0 unity UnityDataAssetPack.apk && \
+sudo waydroid shell pm install-commit 0
+
