@@ -13,6 +13,7 @@ import jakarta.transaction.Transactional;
 import jakarta.ws.rs.Consumes;
 import jakarta.ws.rs.POST;
 import jakarta.ws.rs.Path;
+import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 import org.jboss.logging.Logger;
@@ -31,16 +32,26 @@ public class MailgunWebhook {
 	private static final Logger log = Logger.getLogger(MailgunWebhook.class);
 	private static final ObjectMapper mapper = new ObjectMapper();
 	private Map<String, Collection<FormValue>> map = null;
-	
+
 	@Inject
 	OciStorageService ociStorageService;
 
 	@POST
 	@Consumes({ MediaType.MULTIPART_FORM_DATA, MediaType.APPLICATION_FORM_URLENCODED })
+	@Produces(MediaType.APPLICATION_JSON)
 	@Transactional
 	public Response handleWebhook(MultipartFormDataInput input) {
 		try {
 			this.map = input.getValues();
+
+			String mailgunMessageId = getVal("Message-Id");
+			Email existing = Email.find("mailgunMessageId", mailgunMessageId).firstResult();
+			if (existing != null) {
+				log.infof("Email with Mailgun Message ID %s already exists. Skipping...",
+						mailgunMessageId);
+				return Response.ok("Email already exists with ID: " + existing.mailgunMessageId)
+						.build();
+			}
 
 			Email email = new Email();
 
@@ -50,7 +61,7 @@ public class MailgunWebhook {
 			email.fromAddress = getVal("from");
 			email.senderAddress = getVal("sender");
 			email.senderIdentity = null;
-			email.mailgunMessageId = getVal("Message-Id");
+			email.mailgunMessageId = mailgunMessageId;
 
 			email.toEmail = getVal("To");
 			email.cc = getVal("recipient");

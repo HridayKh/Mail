@@ -1,6 +1,7 @@
 package in.HridayKh.api;
 
 import in.HridayKh.entities.Email;
+import io.quarkus.logging.Log;
 import in.HridayKh.entities.Attachment;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
@@ -13,8 +14,12 @@ import java.util.List;
 public class Emails {
 
 	@GET
+	@Produces(MediaType.APPLICATION_JSON)
 	public List<Email> listEmails() {
-		return Email.listAll();
+		Log.info("\n\nListing all emails\n\n");
+		List<Email> emails = Email.listAll();
+		Log.info(emails.getFirst().toString());
+		return emails;
 	}
 
 	@GET

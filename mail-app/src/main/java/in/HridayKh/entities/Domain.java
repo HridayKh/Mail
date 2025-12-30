@@ -3,6 +3,8 @@ package in.HridayKh.entities;
 import io.quarkus.hibernate.orm.panache.PanacheEntity;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.Table;
 import org.hibernate.annotations.CreationTimestamp;
 
@@ -12,14 +14,12 @@ import java.time.LocalDateTime;
 @Table(name = "domains")
 public class Domain extends PanacheEntity {
 	@Column(unique = true, nullable = false)
-	private String name;
+	public String name;
 
 	@Column(nullable = false)
-	private boolean isVerified;
-
-	@Column(nullable = false)
-	private String mailgunRegion;
+	@Enumerated(EnumType.STRING)
+	public MailgunReigon mailgunRegion;
 
 	@CreationTimestamp
-	private LocalDateTime createdAt;
+	public LocalDateTime createdAt;
 }
