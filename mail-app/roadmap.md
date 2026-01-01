@@ -1,5 +1,6 @@
 - add check for mailgun reigon in creating domains
 - proper email validaiton in creating domains, senders, etc.
+- usage analytics
 
 - proper error handling in webhooks
 - cretae special folders on startup instead of on first need

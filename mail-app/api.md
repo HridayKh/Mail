@@ -22,36 +22,95 @@
 **GET** `/v1/folders`
 - List all folders
 
+##### Responses
+
+- **200 OK**
+```json
+[
+  { "id": 2, "name": "Inbox", "type": "INBOX", "colorHex": "#3498db" },
+  { "id": 3, "name": "Sales", "type": "CUSTOM", "colorHex": "#ff9900" }
+]
+```
+
 **POST** `/v1/folders`
 - Create a new folder
+
+##### Request
+```json
+{
+  "name": "Sales",
+  "type": "CUSTOM",
+  "colorHex": "#ff9900"
+}
+```
+
+##### Responses
+
+- **201 Created**
+```json
+{ "id": 3, "name": "Sales", "type": "CUSTOM", "colorHex": "#ff9900" }
+```
+
+- **400 Bad Request**
+```json
+{ "error": "Folder name is required" }
+```
+
+- **409 Conflict**
+```json
+{ "error": "Folder of type INBOX already exists" }
+```
 
 **GET** `/v1/folders/{folder_id}`
 - Get folder details
 
+##### Responses
+
+- **200 OK**
+```json
+{ "id": 3, "name": "Sales", "type": "CUSTOM", "colorHex": "#ff9900" }
+```
+
+- **404 Not Found**
+```json
+{ "error": "Folder not found" }
+```
+
 **PATCH** `/v1/folders/{folder_id}`
-- Update folder (name, color, type)
+- Update folder (name, color)
+
+##### Request
+```json
+{ "name": "Marketing Sales", "colorHex": "#00cc66" }
+```
+
+##### Responses
+
+- **200 OK**
+```json
+{ "id": 3, "name": "Marketing Sales", "type": "CUSTOM", "colorHex": "#00cc66" }
+```
+
+- **400 Bad Request** (attempt to change type)
+```json
+{ "error": "Folder type update not allowed" }
+```
 
 **DELETE** `/v1/folders/{folder_id}`
 - Delete a folder
 
----
+##### Responses
 
-## Emails in Folders
-
-**GET** `/v1/folders/{folder_id}/emails`
-- List all emails in a folder
-- Query params: `?status=SENT&isRead=false`
-
-**GET** `/v1/folders/{folder_id}/emails/{email_id}`
-- Get specific email in a folder
-
-> all other email operations are done via direct email endpoints below
+- **200 OK**
+```json
+{ "status": "deleted", "id": 3 }
+```
 
 ---
 
 ## Attachments
 
-**GET** `/v1/folders/{folder_id}/emails/{email_id}/attachments`
+**GET** `/v1/emails/{email_id}/attachments`
 - List attachments for an email
 
 ```json
@@ -77,7 +136,7 @@
 
 ---
 
-## Emails (Direct Access)
+## Emails
 
 **GET** `/v1/emails`
 - List all emails across folders
