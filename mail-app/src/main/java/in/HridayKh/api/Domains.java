@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Map;
 
 import in.HridayKh.entities.Domain;
+import in.HridayKh.utils.HttpUtil;
 import jakarta.transaction.Transactional;
 import jakarta.ws.rs.Consumes;
 import jakarta.ws.rs.GET;
@@ -33,11 +34,11 @@ public class Domains {
 	@Produces(MediaType.APPLICATION_JSON)
 	public Response createDomains(Domain domain) {
 		if (domain == null || domain.name == null || domain.name.isBlank())
-			return errorResponse(Response.Status.BAD_REQUEST, "empty Domain name not allowed");
+			return HttpUtil.errorResponse(Response.Status.BAD_REQUEST, "empty Domain name not allowed");
 		domain.name = domain.name.toLowerCase();
 
 		if (Domain.find("name", domain.name).firstResult() != null)
-			return errorResponse(Response.Status.CONFLICT,
+			return HttpUtil.errorResponse(Response.Status.CONFLICT,
 					"Domain with name " + domain.name + " already exists.");
 
 		domain.persist();
@@ -50,7 +51,7 @@ public class Domains {
 	@Produces(MediaType.APPLICATION_JSON)
 	public Response getDomain(@PathParam("domain_id") String domainId) {
 		try {
-			Domain domain = requireDomain(domainId);
+			Domain domain = HttpUtil.requireDomain(domainId);
 			return Response.ok(domain).build();
 		} catch (WebApplicationException e) {
 			return e.getResponse();
@@ -64,10 +65,10 @@ public class Domains {
 	@Consumes(MediaType.APPLICATION_JSON)
 	public Response updateDomain(@PathParam("domain_id") String domainId, Domain update) {
 		try {
-			Domain domain = requireDomain(domainId);
+			Domain domain = HttpUtil.requireDomain(domainId);
 
 			if (update == null)
-				return errorResponse(Response.Status.BAD_REQUEST, "Request body is required");
+				return HttpUtil.errorResponse(Response.Status.BAD_REQUEST, "Request body is required");
 
 			updateNameIfPresent(domain, update);
 
@@ -86,7 +87,7 @@ public class Domains {
 	@Transactional
 	public Response deleteDomain(@PathParam("domain_id") String domainId) {
 		try {
-			Domain domain = requireDomain(domainId);
+			Domain domain = HttpUtil.requireDomain(domainId);
 
 			Map<String, Object> resp = new HashMap<>();
 			resp.put("createdAt", domain.createdAt != null ? domain.createdAt.toString() : null);
@@ -103,46 +104,18 @@ public class Domains {
 		}
 	}
 
-	private Response errorResponse(Response.Status status, String msg) {
-		return Response.status(status).entity(Map.of("error", msg)).build();
-	}
-
-	private Domain requireDomain(String domainId) {
-		if (domainId == null || domainId.isBlank())
-			throw new WebApplicationException(
-					errorResponse(Response.Status.BAD_REQUEST, "Domain ID is required"));
-
-		long id;
-		try {
-			id = Long.parseLong(domainId);
-		} catch (NumberFormatException e) {
-			throw new WebApplicationException(errorResponse(Response.Status.BAD_REQUEST,
-					"Invalid domain ID format: must be a number"));
-		}
-
-		if (id <= 0)
-			throw new WebApplicationException(errorResponse(Response.Status.BAD_REQUEST,
-					"Domain ID must be a positive number"));
-
-		Domain domain = Domain.findById(id);
-		if (domain == null)
-			throw new WebApplicationException(errorResponse(Response.Status.NOT_FOUND, "Domain not found"));
-
-		return domain;
-	}
-
 	private void updateNameIfPresent(Domain domain, Domain update) {
 		if (update.name == null)
 			return;
 		String newName = update.name.trim().toLowerCase();
 		if (newName.isBlank())
 			throw new WebApplicationException(
-					errorResponse(Response.Status.BAD_REQUEST, "empty Domain name not allowed"));
+					HttpUtil.errorResponse(Response.Status.BAD_REQUEST, "empty Domain name not allowed"));
 
 		Domain existing = Domain.find("name", newName).firstResult();
 		if (existing != null && !existing.id.equals(domain.id))
 			throw new WebApplicationException(
-					errorResponse(Response.Status.CONFLICT,
+					HttpUtil.errorResponse(Response.Status.CONFLICT,
 							"Domain with name " + newName + " already exists."));
 
 		domain.name = newName;

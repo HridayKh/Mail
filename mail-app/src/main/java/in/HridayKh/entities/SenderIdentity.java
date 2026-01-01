@@ -1,5 +1,7 @@
 package in.HridayKh.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import io.quarkus.hibernate.orm.panache.PanacheEntity;
 import jakarta.persistence.*;
 
@@ -9,14 +11,15 @@ public class SenderIdentity extends PanacheEntity {
 
 	@ManyToOne
 	@JoinColumn(name = "domain_id", nullable = false)
-	private Domain domain;
+	@JsonIgnore
+	public Domain domain;
 
 	@Column(nullable = false)
-	private String email;
+	public String email;
 
 	@Column(nullable = false)
-	private String displayName;
+	public String displayName;
 
 	@Column
-	private boolean isDefault;
+	public boolean isDefault;
 }

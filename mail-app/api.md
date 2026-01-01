@@ -300,28 +300,192 @@ Non-positive ID:
 
 ### Domain-scoped
 
-**GET** `/v1/domains/{domain_id}/senders`
+#### **GET** `/v1/domains/{domain_id}/senders`
 - List sender identities for a domain
 
-**POST** `/v1/domains/{domain_id}/senders`
+##### Responses
+
+- **200 OK**
+```json
+[
+  {
+    "id": 1,
+    "email": "h.khanna",
+    "displayName": "Hriday Khanna",
+    "isDefault": false
+  },
+  {
+    "id": 2,
+    "email": "hk.khanna",
+    "displayName": "Hriday Khanna",
+    "isDefault": true
+  }
+]
+```
+
+#### **POST** `/v1/domains/{domain_id}/senders`
 - Create sender identity for the domain
 
-**GET** `/v1/domains/{domain_id}/senders/{sender_id}`
+##### Request
+```json
+{
+  "email": "new.sender",
+  "displayName": "New Sender",
+  "isDefault": false
+}
+```
+
+##### Responses
+
+- **201 Created**
+```json
+{
+  "id": 42,
+  "email": "new.sender",
+  "displayName": "New Sender",
+  "isDefault": false
+}
+```
+
+- **400 Bad Request**
+```json
+{ "error": "email is required" }
+```
+
+- **409 Conflict**
+```json
+{ "error": "Sender with email new.sender already exists for this domain" }
+```
+
+#### **GET** `/v1/domains/{domain_id}/senders/{sender_id}`
 - Get identity details
 
-**PUT** `/v1/domains/{domain_id}/senders/{sender_id}`
+##### Responses
+
+- **200 OK**
+```json
+{
+  "id": 2,
+  "email": "hk.khanna",
+  "displayName": "Hriday Khanna",
+  "isDefault": true
+}
+```
+
+- **404 Not Found**
+```json
+{ "error": "Sender not found" }
+```
+
+#### **PATCH** `/v1/domains/{domain_id}/senders/{sender_id}`
 - Update identity (display name, default status)
 
-**DELETE** `/v1/domains/{domain_id}/senders/{sender_id}`
+##### Request
+```json
+{
+  "displayName": "Updated Name",
+  "isDefault": true
+}
+```
+
+##### Responses
+
+- **200 OK**
+```json
+{
+  "id": 2,
+  "email": "hk.khanna",
+  "displayName": "Updated Name",
+  "isDefault": true
+}
+```
+
+- **400 Bad Request**
+```json
+{ "error": "Invalid sender id format" }
+```
+
+#### **DELETE** `/v1/domains/{domain_id}/senders/{sender_id}`
 - Remove sender identity
+
+##### Responses
+
+- **200 OK**
+```json
+{ "status": "deleted", "id": 2 }
+```
 
 ### Global endpoints
 
-**GET** `/v1/senders`
+#### **GET** `/v1/senders`
 - List sender identities across domains
 
-**GET** `/v1/senders/{sender_id}`
+##### Responses
+
+- **200 OK**
+```json
+[
+  {
+    "id": 1,
+    "email": "h.khanna",
+    "displayName": "Hriday Khanna",
+    "isDefault": false
+  },
+  {
+    "id": 2,
+    "email": "hk.khanna",
+    "displayName": "Hriday Khanna",
+    "isDefault": true
+  }
+]
+```
+
+#### **GET** `/v1/senders/{sender_id}`
 - Get sender identity by id
 
-**DELETE** `/v1/senders/{sender_id}`
+##### Responses
+
+- **200 OK**
+```json
+{
+  "id": 2,
+  "email": "hk.khanna",
+  "displayName": "Hriday Khanna",
+  "isDefault": true
+}
+```
+
+- **404 Not Found**
+```json
+{ "error": "Sender not found" }
+```
+
+#### **PATCH** `/v1/senders/{sender_id}`
+- Update identity (display name, default status)
+
+##### Request
+```json
+{ "displayName": "New Name", "isDefault": false }
+```
+
+##### Responses
+
+- **200 OK**
+```json
+{
+  "id": 2,
+  "email": "hk.khanna",
+  "displayName": "New Name",
+  "isDefault": false
+}
+```
+
+#### **DELETE** `/v1/senders/{sender_id}`
 - Remove a sender identity
+
+##### Responses
+
+- **200 OK**
+```json
+{ "status": "deleted", "id": 2 }
+```
