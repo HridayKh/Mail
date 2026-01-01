@@ -130,6 +130,26 @@
 ### **GET** `/v1/domains`
 - List all domains
 
+#### Responses
+
+- **200 OK**
+```json
+[
+  {
+    "id": 1,
+    "name": "hridaykh.in",
+    "mailgunRegion": "EU",
+    "createdAt": "2025-12-30T15:46:49.917791"
+  },
+  {
+    "id": 2,
+    "name": "auth.hridaykh.in",
+    "mailgunRegion": "EU",
+    "createdAt": "2025-12-30T15:55:47.380432"
+  }
+]
+```
+
 ### **POST** `/v1/domains`
 - Add new domain
 
@@ -170,29 +190,138 @@
 ### **GET** `/v1/domains/{domain_id}`
 - Get domain details
 
-### **PUT** `/v1/domains/{domain_id}`
-- Update domain (verify status, region)
+- Path parameters:
+  - `domain_id` (required): positive integer ID of the domain
+
+#### Responses
+
+- **200 OK**
+```json
+{
+  "id": 2,
+  "name": "auth.hridaykh.in",
+  "mailgunRegion": "EU",
+  "createdAt": "2025-12-30T15:55:47.380432"
+}
+```
+
+- **400 Bad Request** (examples)
+
+Missing `domain_id`:
+```json
+{ "error": "Domain ID is required" }
+```
+
+Invalid format:
+```json
+{ "error": "Invalid domain ID format: must be a number" }
+```
+
+Non-positive ID:
+```json
+{ "error": "Domain ID must be a positive number" }
+```
+
+- **404 Not Found**
+```json
+{ "error": "Domain not found" }
+```
+
+### **PATCH** `/v1/domains/{domain_id}`
+- Update domain (name, mailgunRegion)
+
+#### Request body (partial updates allowed)
+```json
+{
+  "name": "new.example.com",
+  "mailgunRegion": "EU"
+}
+```
+
+#### Responses
+
+- **200 OK** (returns updated domain)
+```json
+{
+  "id": 2,
+  "name": "new.example.com",
+  "mailgunRegion": "EU",
+  "createdAt": "2025-12-30T15:55:47.380432"
+}
+```
+
+- **400 Bad Request** (examples)
+```json
+{ "error": "Request body is required" }
+```
+
+```json
+{ "error": "empty Domain name not allowed" }
+```
+
+- **409 Conflict**
+```json
+{ "error": "Domain with name new.example.com already exists." }
+```
 
 ### **DELETE** `/v1/domains/{domain_id}`
 - Remove domain
 
+#### Responses
+
+- **200 OK**
+```json
+{
+    "status": "deleted",
+    "id": 3,
+    "name": "a.hridaykh.in",
+    "mailgunRegion": "US",
+    "createdAt": "2026-01-01T14:57:18.278322"
+}
+```
+
+- **400 Bad Request** (invalid or missing id)
+```json
+{ "error": "Domain ID is required" }
+```
+
+```json
+{ "error": "Invalid domain ID format: must be a number" }
+```
+
+- **404 Not Found**
+```json
+{ "error": "Domain not found" }
+```
+
 ---
 
-## Sender Identities (Domain-Scoped)
+## Sender Identities
 
-**GET** `/v1/domains/{domain_id}/identities`
+### Domain-scoped
+
+**GET** `/v1/domains/{domain_id}/senders`
 - List sender identities for a domain
 
-**POST** `/v1/domains/{domain_id}/identities`
-- Create sender identity
+**POST** `/v1/domains/{domain_id}/senders`
+- Create sender identity for the domain
 
-**GET** `/v1/domains/{domain_id}/identities/{identity_id}`
+**GET** `/v1/domains/{domain_id}/senders/{sender_id}`
 - Get identity details
 
-**PUT** `/v1/domains/{domain_id}/identities/{identity_id}`
+**PUT** `/v1/domains/{domain_id}/senders/{sender_id}`
 - Update identity (display name, default status)
 
-**DELETE** `/v1/domains/{domain_id}/identities/{identity_id}`
+**DELETE** `/v1/domains/{domain_id}/senders/{sender_id}`
 - Remove sender identity
 
+### Global endpoints
 
+**GET** `/v1/senders`
+- List sender identities across domains
+
+**GET** `/v1/senders/{sender_id}`
+- Get sender identity by id
+
+**DELETE** `/v1/senders/{sender_id}`
+- Remove a sender identity

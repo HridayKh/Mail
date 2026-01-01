@@ -6,6 +6,7 @@ import jakarta.inject.Inject;
 import jakarta.ws.rs.GET;
 import in.HridayKh.entities.Attachment;
 import jakarta.ws.rs.Path;
+import jakarta.ws.rs.PathParam;
 
 @Path("/test")
 public class Test {
@@ -16,7 +17,7 @@ public class Test {
 	@GET
 	@Path("/presigned-url/{attId}")
 	public String testPresignedUrl(
-			@jakarta.ws.rs.PathParam("attId") String attId) {
+			@PathParam("attId") String attId) {
 		try {
 			Long id = Long.parseLong(attId);
 			Attachment attachment = Attachment.findById(id);
