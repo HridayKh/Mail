@@ -140,26 +140,61 @@
 
 **GET** `/v1/emails`
 - List all emails across folders
-- email query params:
-	- offset (default: 0)
-	- limit (default: 20, max: 100)
-	- sortby (subject, textBody, to, fromEmail, fromName, senderAddress, senderIdentity.displayName, senderIdentity.email, timestamp)
-	- isRead
-	- isArchived
-	- subject query
-	- body query
-	- subject-body combined query
-	- startDate
-	- endDate
-	- parentEmail
-	- hasParentEmail
-	- mailgunMessageId
-	- emailStatus
-	- hasAttachments
-	- folderIds (comma-separated list of folder IDs)
+- Query parameters (grouped for clarity):
+	- Pagination:
+		- `offset` (default: 0)
+		- `limit` (default: 20, max: 100)
 
-	> to get deleted/sent/spam emails, get the special folder of respectiv types
+	- Sorting / projection:
+		- `sortby` (subject, textBody, to, fromEmail, fromName, senderAddress, senderIdentity.displayName, senderIdentity.email, timestamp)
+		- `sortDir` (`asc`|`desc`)
+		- `fields` (comma-separated list to limit response fields)
 
+	- Basic status filters:
+		- `isRead` (true|false)
+		- `isArchived` (true|false)
+		- `emailStatus` (DRAFT, SCHEDULED, SENT, FAILED, RECEIVED)
+
+	- Folder / direction:
+		- `folderIds` (comma-separated list of folder IDs)
+		- `folderType` (INBOX, SENT, DRAFTS, TRASH, SPAM, CUSTOM)
+
+	- Participants / addresses:
+		- `fromEmail`
+		- `toEmail`
+		- `cc` (email or comma-separated list)
+		- `bcc` (email or comma-separated list)
+		- `senderIdentity.email`
+		- `senderIdentity.displayName`
+
+	- Search / text queries:
+		- `subject` — search subject only
+		- `body` — search body only
+		- `subjectBody` — combined subject+body search
+		- `query` — global search across subject, body, from, to, cc
+
+	- Date / time:
+		- `startDate` (ISO 8601)
+		- `endDate` (ISO 8601)
+
+	- Prent:
+		- `parentEmail` (id)
+		- `hasParentEmail` (true|false)
+
+	- Attachments & size:
+		- `hasAttachments` (true|false)
+		- `attachmentMimeType`
+		- `minSizeBytes`
+		- `maxSizeBytes`
+
+	- initial implementation:
+		- `offset`
+		- `limit`
+		- `toEmail`
+		- `emailStatus`
+		- `sortDir`
+		- `hasAttachments`
+		- `fields`
 
 **POST** `/v1/emails`
 - Create/send new email
