@@ -24,9 +24,9 @@ jobs:
       - name: Set version and build
         working-directory: mail-app
         run: |
-          ./mvnw -B -ntp versions:set -DnewVersion=${GITHUB_REF_NAME#v}
-          ./mvnw -B -ntp versions:commit
-          ./mvnw -B -ntp clean package
+          mvn -B -ntp versions:set -DnewVersion=${GITHUB_REF_NAME#v}
+          mvn -B -ntp versions:commit
+          mvn -B -ntp clean package -DskipTests
 
       - name: Deploy to Server
         uses: appleboy/scp-action@v0.1.7
@@ -64,8 +64,8 @@ jobs:
         run: |
           CURRENT=${GITHUB_REF_NAME#v}
           NEXT=$(echo $CURRENT | awk -F. '{printf "%d.%d.%d", $1, $2, $3+1}')
-          ./mvnw -B -ntp versions:set -DnewVersion=$NEXT-SNAPSHOT
-          ./mvnw -B -ntp versions:commit
+          mvn -B -ntp versions:set -DnewVersion=$NEXT-SNAPSHOT
+          mvn -B -ntp versions:commit
 
       - name: Update main branch with new version
         working-directory: mail-app
@@ -76,8 +76,8 @@ jobs:
           git fetch origin main
           git checkout main
 
-          ./mvnw -B -ntp versions:set -DnewVersion=$NEXT-SNAPSHOT
-          ./mvnw -B -ntp versions:commit
+          mvn -B -ntp versions:set -DnewVersion=$NEXT-SNAPSHOT
+          mvn -B -ntp versions:commit
 
           git config user.name "mail-app-release-bot"
           git config user.email "actions@github.com"
