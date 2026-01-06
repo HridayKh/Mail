@@ -2,7 +2,11 @@ name: Optimized Quarkus Deploy
 
 on:
   push:
-    branches: [ "main" ]
+    tags:
+      - "v*.*.*"
+
+permissions:
+  contents: write
 
 jobs:
   build-and-deploy:
@@ -17,9 +21,12 @@ jobs:
           distribution: 'temurin'
           cache: maven
 
-      - name: Build with Maven
+      - name: Set version and build
         working-directory: mail-app
-        run: ./mvnw clean package -DskipTests
+        run: |
+          ./mvnw -B -ntp versions:set -DnewVersion=${GITHUB_REF_NAME#v}
+          ./mvnw -B -ntp versions:commit
+          ./mvnw -B -ntp clean package
 
       - name: Deploy to Server
         uses: appleboy/scp-action@v0.1.7
@@ -38,3 +45,43 @@ jobs:
           username: ${{ secrets.SERVER_USER }}
           key: ${{ secrets.SERVER_SSH_KEY }}
           script: sudo systemctl restart mail-app
+
+  bump-version-for-next-development:
+    needs: build-and-deploy
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up JDK 21
+        uses: actions/setup-java@v4
+        with:
+          java-version: '21'
+          distribution: 'temurin'
+          cache: maven
+
+      - name: Bump version to next SNAPSHOT
+        working-directory: mail-app
+        run: |
+          CURRENT=${GITHUB_REF_NAME#v}
+          NEXT=$(echo $CURRENT | awk -F. '{printf "%d.%d.%d", $1, $2, $3+1}')
+          ./mvnw -B -ntp versions:set -DnewVersion=$NEXT-SNAPSHOT
+          ./mvnw -B -ntp versions:commit
+
+      - name: Update main branch with new version
+        working-directory: mail-app
+        run: |
+          CURRENT=${GITHUB_REF_NAME#v}
+          NEXT=$(echo $CURRENT | awk -F. '{printf "%d.%d.%d", $1, $2, $3+1}')
+
+          git fetch origin main
+          git checkout main
+
+          ./mvnw -B -ntp versions:set -DnewVersion=$NEXT-SNAPSHOT
+          ./mvnw -B -ntp versions:commit
+
+          git config user.name "mail-app-release-bot"
+          git config user.email "actions@github.com"
+
+          git add pom.xml
+          git commit -m "chore: start next version ($NEXT-SNAPSHOT)"
+          git push origin main
