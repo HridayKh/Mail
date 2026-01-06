@@ -1,4 +1,4 @@
-package in.HridayKh.entities;
+package in.HridayKh.models;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 

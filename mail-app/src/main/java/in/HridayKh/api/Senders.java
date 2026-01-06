@@ -3,8 +3,8 @@ package in.HridayKh.api;
 import java.util.List;
 import java.util.Map;
 
-import in.HridayKh.entities.Domain;
-import in.HridayKh.entities.SenderIdentity;
+import in.HridayKh.models.Domain;
+import in.HridayKh.models.SenderIdentity;
 import in.HridayKh.utils.HttpUtil;
 import jakarta.transaction.Transactional;
 import jakarta.ws.rs.Consumes;

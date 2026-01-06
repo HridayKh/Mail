@@ -4,8 +4,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import in.HridayKh.entities.Folder;
-import in.HridayKh.entities.FolderType;
+import in.HridayKh.models.Folder;
+import in.HridayKh.models.FolderType;
 import in.HridayKh.utils.HttpUtil;
 import jakarta.transaction.Transactional;
 import jakarta.ws.rs.Consumes;
@@ -80,9 +80,9 @@ public class Folders {
 
 	@PATCH
 	@Path("/{folder_id}")
+	@Transactional
 	@Produces(MediaType.APPLICATION_JSON)
 	@Consumes(MediaType.APPLICATION_JSON)
-	@Transactional
 	public Response updateFolder(@PathParam("folder_id") String folderId, Folder update) {
 		try {
 			Folder f = HttpUtil.requireFolder(folderId);
