@@ -2,8 +2,8 @@ package in.HridayKh.utils;
 
 import java.util.Map;
 
-import in.HridayKh.models.Domain;
-import in.HridayKh.models.Folder;
+import in.HridayKh.models.entities.Domain;
+import in.HridayKh.models.entities.Folder;
 import jakarta.ws.rs.WebApplicationException;
 import jakarta.ws.rs.core.Response;
 

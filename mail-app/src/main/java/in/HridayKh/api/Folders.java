@@ -4,8 +4,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import in.HridayKh.models.Folder;
-import in.HridayKh.models.FolderType;
+import in.HridayKh.models.entities.Folder;
+import in.HridayKh.models.enums.FolderType;
 import in.HridayKh.utils.HttpUtil;
 import jakarta.transaction.Transactional;
 import jakarta.ws.rs.Consumes;

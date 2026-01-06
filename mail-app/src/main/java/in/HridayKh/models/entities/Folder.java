@@ -1,5 +1,6 @@
-package in.HridayKh.models;
+package in.HridayKh.models.entities;
 
+import in.HridayKh.models.enums.FolderType;
 import io.quarkus.hibernate.orm.panache.PanacheEntity;
 import jakarta.persistence.*;
 

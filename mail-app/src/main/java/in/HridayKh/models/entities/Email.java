@@ -1,8 +1,10 @@
-package in.HridayKh.models;
+package in.HridayKh.models.entities;
 
 import io.quarkus.hibernate.orm.panache.PanacheEntity;
 import jakarta.persistence.*;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+import in.HridayKh.models.enums.EmailStatus;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;

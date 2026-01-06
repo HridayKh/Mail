@@ -3,11 +3,11 @@ package in.HridayKh;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import in.HridayKh.models.Attachment;
-import in.HridayKh.models.Email;
-import in.HridayKh.models.EmailStatus;
-import in.HridayKh.models.Folder;
-import in.HridayKh.models.FolderType;
+import in.HridayKh.models.entities.Attachment;
+import in.HridayKh.models.entities.Email;
+import in.HridayKh.models.entities.Folder;
+import in.HridayKh.models.enums.EmailStatus;
+import in.HridayKh.models.enums.FolderType;
 import jakarta.inject.Inject;
 import jakarta.transaction.Transactional;
 import jakarta.ws.rs.Consumes;

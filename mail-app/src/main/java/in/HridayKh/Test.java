@@ -2,7 +2,7 @@ package in.HridayKh;
 
 import java.util.List;
 
-import in.HridayKh.models.Attachment;
+import in.HridayKh.models.entities.Attachment;
 import jakarta.inject.Inject;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;
